@@ -4,7 +4,6 @@ import { Article } from '../entities';
 import {
   Box,
   Button,
-  Card,
   CardActions,
   CardContent,
   Grid,
@@ -29,7 +28,7 @@ export function Index({
     <Box sx={{ width: '100%' }}>
       <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 4 }}>
         {articles?.map((article: Article) => (
-          <Grid item xs={6}>
+          <Grid key={article.id} item xs={6}>
             <Item>
               <CardContent>
                 <Typography variant="h5" component="div">
@@ -45,7 +44,7 @@ export function Index({
                 </Typography>
               </CardContent>
               <CardActions>
-                <Link key={article.id} href={'/articles/' + article.id}>
+                <Link href={'/articles/' + article.id}>
                   <Button size="small">See more</Button>
                 </Link>
               </CardActions>

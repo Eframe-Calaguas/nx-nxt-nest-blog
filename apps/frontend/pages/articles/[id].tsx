@@ -23,7 +23,10 @@ export const getServerSideProps: GetServerSideProps<{
   );
   const article = await res.json();
 
-  if (article.hasOwnProperty('statusCode') && article.statusCode !== 200) {
+  if (
+    Object.prototype.hasOwnProperty.call(article, 'statusCode') &&
+    article.statusCode !== 200
+  ) {
     return {
       notFound: true,
     };
