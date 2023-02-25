@@ -1,7 +1,7 @@
 # BlogApp
 
-### Run both backend 
+### To Run backend 
 npx nx serve backend
 
-### Run both frontend 
+### To Run frontend 
 npx nx serve frontend
